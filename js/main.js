@@ -7,7 +7,7 @@ function getData(data) {
     
     
     if (Array.isArray(data)) {
-
+         //!===============
         for (let i = 0; i < data.length; i++) {
             
             HTML += getList(data[i]);
@@ -15,6 +15,8 @@ function getData(data) {
 
         return sectionBody.innerHTML = HTML;
         // return console.log(HTML);
+
+        //!================
     } else {
         return console.log('Tai ne masyvas!');
     }
