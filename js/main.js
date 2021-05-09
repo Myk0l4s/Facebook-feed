@@ -25,8 +25,8 @@ function getData(data) {
 }
 
 function getList(list) {
-
-    console.log(list);
+    
+    console.log(list.autorius.vardas);
     let HTML = `  <div class="card">
                   <div class="card__head">
                     <img src="./img/avatar/user.png" alt="avatar">

@@ -12,15 +12,22 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <nav class="nav">
+            <nav class="nav__wrap">
                 <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
                 <input class="search"type="text" placeholder="Search Facebook">
             </nav>
+            <div class="nav__middle">
+                <a href="#"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-television fa-2x" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-users fa-2x" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-puzzle-piece fa-2x" aria-hidden="true"></i></a>
+            </div>
         </header>
         <main class="main">
             <aside class="left"></aside>
              <section class="section">
-                 <!-- <div class="card">
+                 <div class="card">
                      <div class="card__head">
                        <img src="./img/avatar/user.png" alt="avatar">
                      <div class="user">
@@ -32,18 +39,26 @@
                      </div>
                     </div>
                     <div class="card__main">
-
+                        <p>Tekstas</p>
+                        <div class="card__like">
+                            <a href="#"><i class="fa fa-thumbs-up" aria-hidden="true">Like</i>
+                            </a>
+                            <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>Comment</a>
+                        </div>
                     </div>
                     <div class="card__footer">
-
+                        <img src="./img/avatar/user.png" alt="avatar">
+                        <form method="GET" class="comment">
+                            <input type="comment" placeholder="Comments" class="input__comment">
+                        </form>
                     </div>
-                 </div> -->
+                 </div>
                  
              </section>
              <div class="right"></div>
         </main>
     </div>
     <script src="./js/data.js"></script>
-    <script src="./js/main.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
 </body>
 </html>

@@ -74,7 +74,7 @@ const feed = [{
     },
     {
         autorius: {
-            vardas: 'Vardenis',
+            vardas: 'Jonas',
             pavarde: 'Pavardenis',
             amzius: 50,
             lytis: 'Vyras',
