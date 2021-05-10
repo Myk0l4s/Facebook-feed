@@ -87,6 +87,12 @@ h6 {
 
 html {
   scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .wrapper {
@@ -224,6 +230,7 @@ html {
   justify-content: center;
   align-items: center;
   width: 100%;
+  cursor: pointer;
 }
 
 .wrapper .main .section .card .card__head .more:hover {
@@ -244,10 +251,6 @@ html {
   text-align: center;
   padding: 10px;
   overflow-y: scroll;
-}
-
-.wrapper .main .section .card .card__main p::-webkit-scrollbar {
-  display: none;
 }
 
 .wrapper .main .section .card .card__main .card__like {
@@ -301,10 +304,6 @@ html {
   overflow-wrap: break-word;
   color: black;
   background-color: rgba(197, 169, 169, 0.699);
-}
-
-.wrapper .main .section .card .card__footer .comment .input__comment::-webkit-scrollbar {
-  display: none;
 }
 
 .wrapper .main .section .card .card__footer .card__icons {
