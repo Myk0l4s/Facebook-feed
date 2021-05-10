@@ -26,7 +26,7 @@ function getData(data) {
 
 function getList(list) {
     
-    console.log(list.autorius.avataras);
+    console.log(list.autorius);
     let HTML = ` ${cardHeader(list)}
                  ${cardMain(list)}
                  ${cardFooter(list)}`;
