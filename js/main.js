@@ -8,9 +8,12 @@ function getData(data) {
     
     if (Array.isArray(data)) {
          //!===============
-        for (let i = 0; i < data.length; i++) {
+        // for (let i = 0; i < data.length; i++) {
             
-            HTML += getList(data[i]);
+        //     HTML += getList(data[i]);
+        // }
+        for (let index of data) {
+            HTML += getList(index);
         }
 
         return sectionBody.innerHTML = HTML;
@@ -26,35 +29,38 @@ function getData(data) {
 
 function getList(list) {
     
-    console.log(list.autorius);
-    let HTML = ` ${cardHeader(list)}
-                 ${cardMain(list)}
-                 ${cardFooter(list)}`;
+    // console.log(list.autorius);
+    let HTML = ` ${cardHeader(list.autorius, list.laikas)}
+                 ${cardMain(list.pranesimas)}
+                 ${cardFooter(list.autorius)}`;
     
     return HTML;
 }
 
 //!!!      Funkcijos atskiriems card part'ams ===========
 
-function cardHeader(list) {
+function cardHeader(who, time) {
+
+    // console.log(who.time);
+
     let HTML = `<div class="card">
-    <div class="card__head">
-    <img src="./img/avatar/user.png" alt="avatar">
-       <div class="user">
-         <div class="name">${list.autorius.vardas} ${list.autorius.pavarde}</div>
-          <div class="time">${list.laikas}</div>
-       </div>
-  <div class="more">
-     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-  </div>
-  </div>`
+                  <div class="card__head">
+                    ${getAvatar(who)} 
+                     <div class="user">
+                      <div class="name">${who.vardas} ${who.pavarde}</div>
+                      <div class="time">${time}</div>
+                 </div>
+                <div class="more">
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+              </div>
+            </div>`
     
     return HTML;
 }
 
-function cardMain(list) {
+function cardMain(text) {
     let HTML = `<div class="card__main">
-        <p>${list.pranesimas.tekstas}</p>
+        ${getText(text)}
     <div class="card__like">
         <a href="#"><i class="fa fa-thumbs-up" aria-hidden="true">Like</i></a>
         <a href="#"><i class="fa fa-comment" aria-hidden="true"></i>Comment</a>
@@ -65,25 +71,75 @@ function cardMain(list) {
     return HTML;
 }
 
-function cardFooter(list) {
+function cardFooter(who) {
+  
     let HTML = `<div class="card__footer">
-    <img src="./img/avatar/user.png" alt="avatar">
-    <form method="GET" class="comment">
-        <input type="comment" placeholder="Comments" class="input__comment">
-    </form>
+                 ${getAvatar(who)} 
+               <form method="GET" class="comment">
+                   <input type="comment" placeholder="Comments" class="input__comment">
+               </form>
     <div class="card__icons">
         <a href="#"><i class="fa fa-smile-o" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-camera" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
     </div>
-</div>
+  </div>
 </div>`
     
     return HTML;
 }
 
-//!!!      Funkcijos atskiriems card part'ams ==================
+function getText(message) {
+    
+    let messageText = message.tekstas;
+    let kiek = 10;
+    let textArr = messageText.split(' ');
+    let normal = textArr.length;
+    let cutted = '';
+
+    // ...................... ? pilnos eilutes dydi ir kirptos eilutes dydi
+    if (normal.length < kiek) {
+
+        cutted = normal.length;
+        console.log(cutted);
+    }
+
+    
+    let HTML = `<p>${message.tekstas}</p>`;
+    
+    return HTML;
+}
+//!!!      Funkcijos atskiriems card part'ams ===========
+
+function getAvatar(img) {
+
+    if (img.avataras === '') {
+        img.avataras = 'user.png'
+    } 
+
+    let HTML = ` <img src="./img/avatar/${img.avataras}" alt="avatar">`;
+
+    return HTML;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//!!!      Funkcija laikui skaiciuot
 
 
 // function timeElapsed(list) {
