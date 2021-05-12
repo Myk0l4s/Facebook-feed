@@ -90,27 +90,69 @@ function cardFooter(who) {
     return HTML;
 }
 
+//!!!      Funkcijos atskiriems card part'ams ^^^^^^^^^^^^^^^^^^^^^
+
+
+//! TEKSTO PAKEITIMAS I SHOW MORE FUNKCIJA ===================
 function getText(message) {
     
     let messageText = message.tekstas;
     let kiek = 10;
+    let HTML;
+    
+    
+    let normal;
+    let cutted;
     let textArr = messageText.split(' ');
-    let normal = textArr.length;
-    let cutted = '';
 
-    // ...................... ? pilnos eilutes dydi ir kirptos eilutes dydi
-    if (normal.length < kiek) {
+        // Cutted TEXT first
+    if (textArr.length > kiek) {
+        cutted = textArr.slice();
+        cutted.length = kiek;
+        print = cutted.join(' ');
+        HTML = `<p>${print}</p><span>[...Show more]</span>`;
+        }  else {
+            // Normal TEXT
+           print = textArr.join(' ');
+           HTML = `<p>${print}<span></span></p>`;
+           
+       }
+          return HTML;
+}
 
-        cutted = normal.length;
-        console.log(cutted);
+//! TEKSTO PAKEITIMAS I SHOW MORE FUNKCIJA ===================
+
+
+function renderText() {
+    let cards = document.querySelectorAll('.card');
+    let showButton = document.querySelectorAll('.card__main span');
+    let cardMain = document.querySelectorAll('.card__main p')
+
+    console.log(showButton);
+
+
+    for (let i = 0; i < showButton.length; i++) {
+
+        let feedText = feed[i].pranesimas.tekstas;
+
+        showButton[i].addEventListener('click', (e) => {
+            
+            cardMain[i].innerHTML = feedText;
+            
+        });
     }
 
-    
-    let HTML = `<p>${message.tekstas}</p>`;
-    
-    return HTML;
+    // for (let i = 0; i < cards.length; i++) {
+    //     cards[i].addEventListener('click', (e) => {
+    //         console.log('index:' + i);
+    //         console.log(e.path[2].children[1].innerText);
+    //         console.log(feed[i].pranesimas.tekstas);
+    //         console.log('--------');
+    //     });
+    // }
 }
-//!!!      Funkcijos atskiriems card part'ams ===========
+
+
 
 function getAvatar(img) {
 
@@ -132,44 +174,8 @@ function getAvatar(img) {
 
 
 
-
-
-
-
-
-
-
-//!!!      Funkcija laikui skaiciuot
-
-
-// function timeElapsed(list) {
-//     // console.log(list);
-//     let year = Math.floor(list.laikas / 3600 / 24 / 365);
-//     let day = Math.floor(list.laikas / 3600 / 24);
-//     let hour = Math.floor(list.laikas / 3600);
-//     let min = Math.floor(list.laikas / 60);
-    
-//     if (year>0) {
-//          time = `${year} y.`;
-//        } else if (day>0){
-//             time = `${day} d.`;
-//         }
-//         else if (hour>0){
-//             time = `${hour} h.`;
-//         }
-//         else if (min>0){
-//             time = `${min} min.`;
-//         }
-//         else {
-//              time = `${list.laikas} s.`;
-//         }
-    
-//     return time;
-// }
-
-
-//!============ ! =============! \\
-
+//--------------- !!!!!!!!!!!!!!!!!!!
 getData(feed);
+renderText();
 
 

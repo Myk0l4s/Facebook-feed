@@ -253,6 +253,12 @@ html {
   overflow-y: scroll;
 }
 
+.wrapper .main .section .card .card__main span {
+  color: rgba(185, 8, 8, 0.61);
+  cursor: pointer;
+  font-size: 14px;
+}
+
 .wrapper .main .section .card .card__main .card__like {
   display: flex;
   align-items: center;
