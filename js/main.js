@@ -59,8 +59,17 @@ function cardHeader(who, time) {
 }
 
 function cardMain(text) {
+
+    // console.log(text);
+
+
     let HTML = `<div class="card__main">
         ${getText(text)}
+        <div class="gallery">
+           <div class="gallery__wrap">
+        <img src="./img/3.jpeg" alt="photo">
+        </div>
+    </div>
     <div class="card__like">
         <a href="#"><i class="fa fa-thumbs-up" aria-hidden="true">Like</i></a>
         <a href="#"><i class="fa fa-comment" aria-hidden="true"></i>Comment</a>
@@ -75,9 +84,7 @@ function cardFooter(who) {
   
     let HTML = `<div class="card__footer">
                  ${getAvatar(who)} 
-               <form method="GET" class="comment">
-                   <input type="comment" placeholder="Comments" class="input__comment">
-               </form>
+               <textarea placeholder="Comment..."></textarea>
     <div class="card__icons">
         <a href="#"><i class="fa fa-smile-o" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-camera" aria-hidden="true"></i></a>
@@ -152,7 +159,7 @@ function renderText() {
     // }
 }
 
-
+//! TEKSTO PAKEITIMAS I SHOW MORE FUNKCIJA ===================
 
 function getAvatar(img) {
 
@@ -166,7 +173,18 @@ function getAvatar(img) {
 }
 
 
+function getGallery(img) {
 
+    console.log(img[6]);
+
+    let HTML = '';
+
+
+
+    HTML = `<gallery>`;
+
+    return HTML;
+}
 
 
 

@@ -97,6 +97,7 @@ html {
 
 .wrapper {
   width: 100%;
+  overflow-x: hidden;
 }
 
 .wrapper .header {
@@ -189,7 +190,6 @@ html {
 .wrapper .main .section .card {
   width: 80%;
   margin-left: 10%;
-  height: 250px;
   margin-top: 15px;
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.781);
   border: 1px solid black;
@@ -240,23 +240,32 @@ html {
 
 .wrapper .main .section .card .card__main {
   width: 100%;
+  display: inline-block;
 }
 
 .wrapper .main .section .card .card__main p {
   overflow-y: scroll;
-  display: block;
-  width: 100%;
-  height: 50px;
-  margin-top: 20px;
-  text-align: center;
-  padding: 10px;
-  overflow-y: scroll;
+  font-size: 18px;
 }
 
 .wrapper .main .section .card .card__main span {
   color: rgba(185, 8, 8, 0.61);
   cursor: pointer;
   font-size: 14px;
+}
+
+.wrapper .main .section .card .card__main .gallery {
+  display: inline-block;
+  width: 100%;
+}
+
+.wrapper .main .section .card .card__main .gallery img {
+  display: inline-block;
+  width: 100%;
+  height: 250px;
+  background-position: center center;
+  background-size: cover;
+  padding: 10px 0px 0px 0px;
 }
 
 .wrapper .main .section .card .card__main .card__like {
@@ -266,7 +275,6 @@ html {
   border-bottom: 2px solid sienna;
   border-top: 2px solid sienna;
   width: 100%;
-  height: 50px;
 }
 
 .wrapper .main .section .card .card__main .card__like a {
@@ -286,7 +294,7 @@ html {
 .wrapper .main .section .card .card__footer {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 10fr 5fr;
+  grid-template-columns: 1fr 10fr 4fr;
   padding-top: 5px;
 }
 
@@ -295,32 +303,26 @@ html {
   width: 50px;
   height: 50px;
   border-radius: 27px;
+  text-align: center;
 }
 
-.wrapper .main .section .card .card__footer .comment {
-  width: 100%;
+.wrapper .main .section .card .card__footer textarea {
   border: 1px solid black;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.wrapper .main .section .card .card__footer .comment .input__comment {
-  width: 100%;
-  height: 100%;
-  overflow-wrap: break-word;
-  color: black;
-  background-color: rgba(197, 169, 169, 0.699);
+  border-radius: 10px;
+  resize: none;
+  padding: 10px 6px 0px 6px;
+  margin: 0px 10px;
+  background-color: #ccb7b7;
 }
 
 .wrapper .main .section .card .card__footer .card__icons {
   width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 15px;
 }
 
 .wrapper .main .section .card .card__footer .card__icons a {
-  padding: 10px;
   color: black;
 }
 
