@@ -255,11 +255,21 @@ html {
 }
 
 .wrapper .main .section .card .card__main .gallery {
+  position: relative;
   display: inline-block;
   width: 100%;
 }
 
+.wrapper .main .section .card .card__main .gallery .count {
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  color: red;
+  font-size: 55px;
+}
+
 .wrapper .main .section .card .card__main .gallery .gallery__wrap {
+  position: relative;
   width: 100%;
 }
 

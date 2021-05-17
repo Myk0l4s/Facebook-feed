@@ -137,9 +137,18 @@
                     font-size: 14px;
                 }
                 .gallery {
+                    position: relative;
                     display: inline-block;
                     width: 100%;
+                    .count {
+                        position: absolute;
+                        bottom: 100px;
+                        right: 100px;
+                        color: red;
+                        font-size: 55px;
+                    }
                     .gallery__wrap {
+                        position: relative;
                         width: 100%;
                     img {
                         display: inline-block;
