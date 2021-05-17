@@ -48,7 +48,7 @@ function cardHeader(who, time) {
                     ${getAvatar(who)} 
                      <div class="user">
                       <div class="name">${who.vardas} ${who.pavarde}</div>
-                      <div class="time">${time}</div>
+                      ${getTime(time)}
                  </div>
                 <div class="more">
                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -176,28 +176,60 @@ function getGallery(img) {
 
     let HTML = '';
     let pictures = '';
-
+    let kiek = 5;
 
 
     if (img.length > 0) {
        
         for (let i = 0; i < img.length; i++) {
             pictures += `<img src="./img/${img[i]}" alt="photo">`;
+            if (img.length > kiek) {
+                img.length = kiek;
+            }
+            HTML = `<div class="gallery">
+            <div class="gallery__wrap length--${i + 1}">
+               ${pictures}
+           </div>
+       </div>`;
         }
-        
-        console.log(pictures);
-        
-        
-        HTML = `<div class="gallery">
-                     <div class="gallery__wrap">
-                        ${pictures}
-                    </div>
-                </div>`;
-        
+         
           }
     
           return HTML;
   
+   
+}
+
+function getTime(list) {
+   
+    // console.log(list);
+
+    let HTML = '';
+
+
+   
+        let time;
+        let y = Math.floor(list / 3600 / 24 / 365);
+        let d = Math.floor(list / 3600 / 24);
+        let h = Math.floor(list / 3600);
+        let min = Math.floor(list / 60);
+    
+        if (y>0) {
+            time = `${y} y.`;
+        } else if (d>0) {
+            time = `${d} d.`;
+        } else if (h>0) {
+            time = `${h} h.`;
+        } else if (min > 0) {
+            time = `${min} min.`;
+        } else {
+            time=`${list} s.`
+    }
+    
+
+    HTML = `<div class="time">${time}</div>`;
+        
+    return HTML;
    
 }
 

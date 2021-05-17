@@ -9,12 +9,14 @@ const feed = [{
             avataras: '',
             nuoroda: '#'
         },
-        laikas: 1583832433393,
+        laikas: 1583832433111,
         pranesimas: {
             tekstas: 'Sveiki, as esu Tomas.',
             spalva: '',
             paveiksliukai: [
-
+                '1.png',
+                '2.png',
+                '1.png',
             ]
         }
     },
@@ -27,7 +29,7 @@ const feed = [{
             avataras: '',
             nuoroda: '#',
         },
-        laikas: 1583832433393,
+        laikas: 1583832433311,
         pranesimas: {
             tekstas: 'Neturiu komentaru....',
             spalva: '',
@@ -45,7 +47,7 @@ const feed = [{
             avataras: '2.png',
             nuoroda: '#',
         },
-        laikas: 1583832434388,
+        laikas: 158383243,
         pranesimas: {
             tekstas: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex earum tenetur odit nemo id architecto laborum iure error, aliquid nisi',
             spalva: '',
@@ -63,7 +65,7 @@ const feed = [{
             avataras: '1.png',
             nuoroda: '#',
         },
-        laikas: 1583832434388,
+        laikas: 158,
         pranesimas: {
             tekstas: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex earum tenetur odit nemo id architecto laborum iure error, aliquid nisi . Ex earum tenetur odit nemo id architecto laborum iure error, . Ex earum tenetur odit nemo id architecto laborum iure error,',
             spalva: '',
@@ -81,7 +83,7 @@ const feed = [{
             avataras: 'avataras.png',
             nuoroda: '#',
         },
-        laikas: 1583832434388,
+        laikas: 15838324,
         pranesimas: {
             tekstas: 'Labas',
             spalva: '',
