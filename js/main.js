@@ -65,11 +65,7 @@ function cardMain(text) {
 
     let HTML = `<div class="card__main">
         ${getText(text)}
-        <div class="gallery">
-           <div class="gallery__wrap">
-        <img src="./img/3.jpeg" alt="photo">
-        </div>
-    </div>
+        ${getGallery(text.paveiksliukai)}
     <div class="card__like">
         <a href="#"><i class="fa fa-thumbs-up" aria-hidden="true">Like</i></a>
         <a href="#"><i class="fa fa-comment" aria-hidden="true"></i>Comment</a>
@@ -135,7 +131,7 @@ function renderText() {
     let showButton = document.querySelectorAll('.card__main span');
     let cardMain = document.querySelectorAll('.card__main p')
 
-    console.log(showButton);
+    // console.log(showButton);
 
 
     for (let i = 0; i < showButton.length; i++) {
@@ -175,15 +171,34 @@ function getAvatar(img) {
 
 function getGallery(img) {
 
-    console.log(img[6]);
+    
+    
 
     let HTML = '';
+    let pictures = '';
 
 
 
-    HTML = `<gallery>`;
-
-    return HTML;
+    if (img.length > 0) {
+       
+        for (let i = 0; i < img.length; i++) {
+            pictures += `<img src="./img/${img[i]}" alt="photo">`;
+        }
+        
+        console.log(pictures);
+        
+        
+        HTML = `<div class="gallery">
+                     <div class="gallery__wrap">
+                        ${pictures}
+                    </div>
+                </div>`;
+        
+          }
+    
+          return HTML;
+  
+   
 }
 
 
